@@ -1,4 +1,4 @@
-@if(Auth::user()->role == "manager")
+@if(Auth::user()->role == "admin")
 <!doctype html>
 <html lang="en">
   <head>
@@ -167,7 +167,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/manager/log" class="{{ request()->is('admin/user') ? 'nav-link active' : 'nav-link text-white' }}">
+                    <a href="/admin/user" class="{{ request()->is('admin/user') ? 'nav-link active' : 'nav-link text-white' }}">
                         <svg class="bi pe-none me-2" width="16" height="16">
                             <use xlink:href="#people-circle" />
                         </svg>
@@ -175,7 +175,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/manager/log" class="{{ request()->is('admin/log') ? 'nav-link active' : 'nav-link text-white' }}">
+                    <a href="/admin/log" class="{{ request()->is('admin/log') ? 'nav-link active' : 'nav-link text-white' }}">
                         <svg class="bi pe-none me-2" width="16" height="16">
                             <use xlink:href="#people-circle" />
                         </svg>

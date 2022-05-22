@@ -41,4 +41,14 @@ class User extends Authenticatable
     {
         return $this->hasOne(Pegawai::class, 'user_id', 'id');
     }
+
+    /**
+     * Get the Manager associated with the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function Manager()
+    {
+        return $this->hasOne(Manager::class, 'user_id', 'id');
+    }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\Log\IndexController as AdminLogIndexController;
+use App\Http\Controllers\Admin\User\IndexController as UserIndexController;
 use App\Http\Controllers\Auth\IndexController;
 use App\Http\Controllers\Global\Meja\IndexController as MejaIndexController;
 use App\Http\Controllers\Kasir\Keranjang\IndexController as KeranjangIndexController;
@@ -47,6 +49,20 @@ Route::middleware(['auth'])->group(function () {
             Route::post('/filterBulanan', 'filterBulanan');
         });
         Route::controller(LogIndexController::class)->group(function () {
+            Route::get('/log', 'render');
+        });
+    });
+
+    Route::prefix('/admin')->group(function() {
+        Route::controller(UserIndexController::class)->group(function() {
+            Route::get('/user', 'render');
+            Route::get('/hapusKasir/{id}', 'hapusKasir');
+            Route::get('/hapusManager/{id}', 'hapusManager');
+            Route::get('/getById/{id}', 'getById');
+            Route::post('/updateUser', 'update');
+            Route::post('/createUser/{key}', 'create');
+        });
+        Route::controller(AdminLogIndexController::class)->group(function () {
             Route::get('/log', 'render');
         });
     });
