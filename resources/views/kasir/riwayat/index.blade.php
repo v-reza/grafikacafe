@@ -12,7 +12,6 @@
         </div>
         <div class="modal-body">
             <div class="row" id="riwayatTransaksi">
-                <div id="indexTrx"></div>
             </div>
         </div>
         <div class="modal-footer">

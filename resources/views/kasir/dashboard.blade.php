@@ -447,7 +447,7 @@
                                 `
                             })
                         })
-                        $("#riwayatTransaksi").append(isiRiwayat)
+                        $("#riwayatTransaksi").html(isiRiwayat)
                     }
                 }
             });

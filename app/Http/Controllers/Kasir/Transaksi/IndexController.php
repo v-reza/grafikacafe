@@ -57,7 +57,7 @@ class IndexController extends Controller
         Pendapatan::create([
             'pegawai_id' => $this->idPegawai,
             'total_pendapatan' => $transaksi->total_pembayaran,
-            'tanggal' => Carbon::now('year')
+            'tanggal' => Carbon::now()->format('y-m-d')
         ]);
 
         $this->createLog('Pegawai '.$this->namaPegawai. ' melakukan transaksi dgn total pembayaran ' . $transaksi->total_pembayaran);
